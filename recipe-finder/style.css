@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #ff5f6d;
+    --primary2: #ffc371;
+    --dark: #1f1f1f;
+    --text: #2d2d2d;
+    --bg: #f4f6f8;
+    --card: #ffffff;
+    --radius: 14px;
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #f4f6f8, #ffffff);
+    color: var(--text);
+}
+
+/* CONTAINER */
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px 15px;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 2.4rem;
+    background: linear-gradient(45deg, var(--primary), var(--primary2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    opacity: 0.7;
+}
+
+/* SEARCH */
+.search-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+input[type="text"] {
+    flex: 1;
+    max-width: 450px;
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 10px rgba(255, 95, 109, 0.2);
+}
+
+button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(45deg, var(--primary), var(--primary2));
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* ERROR */
+#error-container {
+    background: #ffe6e6;
+    border: 1px solid #ff5f6d;
+    color: #c0392b;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* MEALS GRID */
+.meals-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+/* CARD */
+.meal {
+    background: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.meal:hover {
+    transform: translateY(-6px);
+}
+
+.meal img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* INFO */
+.meal-info {
+    padding: 12px;
+}
+
+.meal-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.meal-category {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    border-radius: 20px;
+    background: linear-gradient(45deg, var(--primary), var(--primary2));
+    color: white;
+}
+
+/* DETAILS */
+#meal-details {
+    background: var(--card);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-top: 30px;
+}
+
+.meal-details-img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 12px;
+    margin: auto;
+    display: block;
+}
+
+.meal-details-title {
+    text-align: center;
+    font-size: 2rem;
+    margin: 10px 0;
+    color: var(--primary);
+}
+
+.ingredients-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+    list-style: none;
+    margin-top: 15px;
+}
+
+.ingredients-list li {
+    background: #f9f9f9;
+    padding: 8px 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* BUTTONS */
+#back-btn {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+#back-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* YOUTUBE */
+.youtube-link {
+    display: inline-block;
+    margin-top: 10px;
+    background: red;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+/* HIDDEN */
+.hidden {
+    display: none;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .search-container {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}
